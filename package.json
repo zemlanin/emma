@@ -6,6 +6,7 @@
   "scripts": {
     "start": "micro",
     "dev": "micro-dev",
+    "fmt": "prettier --write index.js blueprints/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  window.p = async function (e) {
+    const body = {
+      event: e.target.textContent.trim(),
+    }
+
+    if (e.target.getAttribute('data-payload')) {
+      body.payload = JSON.parse(e.target.getAttribute('data-payload'))
+    }
+
+    const res = await fetch('http://localhost:3000/', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    console.log(await res.json())
+  }
+</script>
+
+<button type="button" onclick="window.p(event)">
+  cart/edit
+</button>
+
+<button type="button" onclick="window.p(event)">
+  cart/finish
+</button>
